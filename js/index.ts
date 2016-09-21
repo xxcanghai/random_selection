@@ -15,7 +15,7 @@ var vmMethods = {
      * 校验并去重数据源字符串
      */
     inputValidate: function () {
-        var arr: string[] = vm.inputStr.split(/,|\t|\r|\n|\r\n/).filter(n => n.length > 0);
+        var arr: string[] = vm.inputStr.split(/,|，|\t|\r|\n|\r\n/).filter(n => n.length > 0);
         vm.inputArr = unique(arr);
         vm.inputStr = vm.inputArr.join(",");
         vm.randomCount = vm.inputArr.length;
