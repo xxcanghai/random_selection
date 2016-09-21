@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简易摇号器</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no; email=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache,no-store,must-revalidate">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"></link>
+    <script src="lib/jquery-1.9.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/vue.js"></script>
+    <style>
+        * {
+            font-family: Monaco, Andale Mono;
+        }
+        
+        .alert {
+            padding: 5px;
+            margin-bottom: 0px;
+            margin-left: 0;
+        }
+        
+        .btn-toolbar .btn-group,
+        .btn-toolbar .input-group {
+            float: right;
+        }
+        
+        textarea {
+            word-break: break-all;
+        }
+        
+        .title {
+            display: inline-block;
+            margin: 0;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="container-fluid">
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="btn-toolbar alert alert-info" role="toolbar">
+                        <h4 class="title">简易摇号器 v1.0</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="btn-toolbar alert alert-warning" role="toolbar">
+                        <label for="">请输入数据源（参加摇号的数据，按逗号或换行分割）：</label>
+
+                        <div class="btn-group btn-group-xs" role="group">
+                            <label class="btn btn-default" title="校验数据源是否合法，并格式化去重数据源" @click="inputValidate()">格式化</label>
+                        </div>
+
+                        <textarea class="form-control" name="" cols="30" rows="3" placeholder="输入数据源" v-model="inputStr" @change="inputValidate()" @blur="inputValidate()"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="btn-toolbar alert alert-warning" role="toolbar">
+                        <label for="">被神选中的人：</label>
+                        <textarea class="form-control" name="" cols="30" rows="7" placeholder="输出结果" v-model="outputStr"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">
+                        要摇号的数量:
+                        <input type="text" name="" v-model="randomCount" style="width:50px" @keyup.enter="startRandom()" />
+                        </label>
+                    <button type="button" class="btn btn-success navbar-btn" style="" @click="startRandom()">开始摇号!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

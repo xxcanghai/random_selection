@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es3",
+        "watch": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
