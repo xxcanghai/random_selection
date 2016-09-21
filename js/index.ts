@@ -48,8 +48,8 @@
 
     var ieMatch = navigator.userAgent.match(/MSIE ([\d.]+);/);
     if (ieMatch != null && parseFloat(ieMatch[1]) <= 8) {
-        alert("请使用更高版本IE浏览器或谷歌浏览器访问本站点！");
         $("body").css("display","none");
+        alert("请使用更高版本IE浏览器或谷歌浏览器访问本站点！");
         return;
     }
 
