@@ -1,5 +1,5 @@
-# random_selection
-random_selection 简易摇号器
+# random_selection 简易摇号器 v1.0
+一个纯前端项目，可满足简单的随机抽取指定数量的号码的需求
 
 # Demo 在线访问
 [https://xxcanghai.github.io/random_selection/index.html](https://xxcanghai.github.io/random_selection/index.html)
